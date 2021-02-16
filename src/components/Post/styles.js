@@ -12,6 +12,15 @@ const styles = StyleSheet.create({
     bottom: 0,
     right: 0,
   },
+  bottomContainer: {
+    position: 'absolute',
+    bottom: 0,
+    width: Dimensions.get('screen').width,
+  },
+  buttonContainer: {
+    alignSelf: 'flex-end',
+    right: 0,
+  },
 });
 
 export default styles;

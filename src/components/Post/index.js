@@ -3,8 +3,7 @@ import {View, Text, TouchableWithoutFeedback} from 'react-native';
 import Video from 'react-native-video';
 import styles from './styles';
 
-const Post = () => {
-
+const Post = ({url}) => {
   const [paused, setPaused] = useState(false);
 
   const onPlayPausePress = () => {
@@ -16,7 +15,7 @@ const Post = () => {
       <TouchableWithoutFeedback onPress={onPlayPausePress}>
         <Video
           source={{
-            uri: 'https://www.w3schools.com/html/mov_bbb.mp4',
+            uri: url,
           }}
           style={styles.video}
           onError={(e: LoadError) => console.log(e)}
@@ -25,6 +24,15 @@ const Post = () => {
           paused={paused}
         />
       </TouchableWithoutFeedback>
+
+      {/* <View style={styles.bottomContainer}>
+        <View style={styles.buttonContainer}>
+          <Text>Button Container</Text>
+        </View>
+        <View>
+          <Text>Bottom Component</Text>
+        </View>
+      </View> */}
     </View>
   );
 };
