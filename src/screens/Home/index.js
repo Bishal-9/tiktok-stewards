@@ -47,12 +47,9 @@ function Home() {
   return (
     <View style={{width: width, height: height}}>
       <Button
-        title="ADD VIDEO"
+        title="START FETCHING VIDEO"
         onPress={() => {
-          console.log('Button Pressed!!');
           setItems([...items, 'https://www.w3schools.com/html/mov_bbb.mp4']);
-          console.log('Type Of ', typeof items);
-          console.log('Items = ', items);
           setDataProvider(dataProvider.cloneWithRows(items));
         }}
       />
@@ -61,6 +58,10 @@ function Home() {
         layoutProvider={layoutProvider}
         dataProvider={dataProvider}
         rowRenderer={rowRenderer}
+        onScroll={() => {
+          setItems([...items, 'https://www.w3schools.com/html/mov_bbb.mp4']);
+          setDataProvider(dataProvider.cloneWithRows(items));
+        }}
       />
     </View>
   );
